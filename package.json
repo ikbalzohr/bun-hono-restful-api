@@ -1,7 +1,9 @@
 {
   "name": "bun-hono-restful-api",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build ./src/index.ts --outdir ./build",
+    "compile": "bun build ./src/index.ts --compile --outfile ./build/bun-hono-restful-api"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",

@@ -3,6 +3,7 @@ import { HTTPException } from "hono/http-exception";
 import { ZodError } from "zod";
 
 import { userController } from "./controller/user-controller";
+import { contactController } from "./controller/contact-controller";
 
 const app = new Hono();
 
@@ -11,6 +12,7 @@ app.get("/", (c) => {
 });
 
 app.route("/", userController);
+app.route("/", contactController);
 
 app.onError(async (err, c) => {
   if (err instanceof HTTPException) {
